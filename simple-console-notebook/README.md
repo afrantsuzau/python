@@ -1,0 +1,1 @@
+# Create a simple Console Notebook app to play with GitHub Copilot
