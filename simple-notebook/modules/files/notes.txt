@@ -2,9 +2,8 @@ edited note 1
 edited note number three
 edited note 5
 note 7
-new note
-upd !!!
 brand new note from cmd
-blablabla asd
-gui note #!
-gui note #1
+brand new note from cmd123
+new note
+new note123
+brand new note from GUI
