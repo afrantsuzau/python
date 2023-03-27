@@ -3,7 +3,7 @@ edited note number three
 edited note 5
 note 7
 new note
-new
+upd !!!
 brand new note from cmd
 blablabla asd
 gui note #!

@@ -14,7 +14,7 @@ def list(file_path=notebook_path):
       notes = file.readlines()
       for index, note in enumerate(notes):
           note = note.strip('\n')
-          notes_humanized.append(f"#{index + 1}. {note}")
+          notes_humanized.append(f"{note}")
           print(f"#{index + 1}: {note}")
   return notes_humanized
           
@@ -27,13 +27,20 @@ def delete(note_index, file_path=notebook_path):
         file.truncate()
         file.writelines(lines)
         
-def edit(note_index, file_path=notebook_path):
+def edit(note_index, note, file_path=notebook_path):
     """Edit a note in the notebook."""
-    note_input = input("Enter a note: ")
     with open(file_path, "r+") as file:
         lines = file.readlines()
         for index, line in enumerate(lines):
             if index == note_index:
-                lines[index] = note_input + "\n"
+                lines[index] = note + "\n"
         file.seek(0)
         file.writelines(lines)
+
+def find_index(note, file_path=notebook_path):
+    """Find the index of a note in the notebook."""
+    with open(file_path, "r") as file:
+        lines = file.readlines()
+        for index, line in enumerate(lines):
+            if line.strip('\n') == note:
+                return index

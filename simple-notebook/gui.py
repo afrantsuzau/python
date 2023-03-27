@@ -24,6 +24,11 @@ while True:
   match event:
     case "Add":
       notebook.append(note=values["note"])
+    case "Edit":
+      notebook.edit(note_index=notebook.find_index(values["list"][0]), note=values["note"])
+      window['list'].update(values=notebook.list())
+    case "list":
+      window["note"].update(values["list"][0])
     case "Exit" | sg.WIN_CLOSED:
       break
     

@@ -17,7 +17,8 @@ while True:
           console.print_error("Invalid value for index. Please try again.")
     elif user_option.startswith("edit"):
         if console.int_validator(console.get_note_index(user_option)):
-          notebook.edit(note_index=console.get_note_index(user_option))
+          note_input = input("Enter a note: ")
+          notebook.edit(note_index=console.get_note_index(user_option), note=note_input)
         else:
           console.print_error("Invalid value for index. Please try again.")
     elif user_option.startswith("help"):
