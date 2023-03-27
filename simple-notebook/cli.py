@@ -7,17 +7,17 @@ console.print_help()
 while True:
     user_option = input("\nEnter an option: ").strip().lower()
     if user_option.startswith("add"):
-        notebook.write_note(note=console.get_note(user_option))
+        notebook.append(note=console.get_note(user_option))
     elif user_option.startswith("list"):
-        notebook.list_notes()
+        notebook.list()
     elif user_option.startswith("delete"):
         if console.int_validator(console.get_note_index(user_option)):
-          notebook.delete_note(note_index=console.get_note_index(user_option))
+          notebook.delete(note_index=console.get_note_index(user_option))
         else:
           console.print_error("Invalid value for index. Please try again.")
     elif user_option.startswith("edit"):
         if console.int_validator(console.get_note_index(user_option)):
-          notebook.edit_note(note_index=console.get_note_index(user_option))
+          notebook.edit(note_index=console.get_note_index(user_option))
         else:
           console.print_error("Invalid value for index. Please try again.")
     elif user_option.startswith("help"):

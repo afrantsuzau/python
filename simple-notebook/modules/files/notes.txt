@@ -6,3 +6,5 @@ new note
 new
 brand new note from cmd
 blablabla asd
+gui note #!
+gui note #1
