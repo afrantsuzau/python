@@ -37,12 +37,23 @@ table_guests_limit = 12
 print(f"\n\nA bigger table with {table_guests_limit} seats had been found. We can invite more people!")
 
 new_guests_list = ['Sam','Haiden','Silver','Chris','Riley','Jackie','Willy','Ali','Skye','Cory']
-table_seating_position = ['Beginning', 'Middle', 'Ending']
+table_seating_position = ['beginning', 'middle', 'ending']
 
 while len(primary_invitation_list) < table_guests_limit:
-  random_guest = new_guests_list.pop(randrange(len(new_guests_list) - 1))
-  print(f"{random_guest.capitalize()} has been randomly selected to join the {event_name}!")
-  primary_invitation_list.append(random_guest)
+  random_guest = new_guests_list.pop(randrange(len(new_guests_list)))
+  random_position = table_seating_position[randrange(len(table_seating_position))]
+  print(f"{random_guest.capitalize()} has been randomly selected to join the {event_name} at the {random_position} of the table!")
+  if random_position == "beginning":
+    print("Sitting the guest at the beggining of the table")
+    primary_invitation_list.insert(0, random_guest)
+  if random_position == "middle":
+    table_middle = int(len(primary_invitation_list) / 2)
+    print(f"Sitting the guest at the middle (position #{table_middle}) of the table")
+    primary_invitation_list.insert(table_middle, random_guest)
+  if random_position == "ending":
+    print("Sitting the guest at the end of the table")
+    primary_invitation_list.append(random_guest)
+  
   print(f"Adjusted list of invitations: {primary_invitation_list}")
   
 print_invitation_message(primary_invitation_list)
